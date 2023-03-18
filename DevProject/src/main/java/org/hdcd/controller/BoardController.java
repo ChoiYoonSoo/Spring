@@ -46,4 +46,14 @@ public class BoardController {
 	   model.addAttribute("list",service.list());
    }
    
+   @GetMapping("/read")
+   public void read(Long boardNo, Model model) throws Exception{
+	   model.addAttribute(service.read(boardNo));
+   }
+   
+   @GetMapping("/modify")
+   public void modifyForm(Long boardNo, Model model) throws Exception{
+	   model.addAttribute(service.read(boardNo));
+   }
+   
 }

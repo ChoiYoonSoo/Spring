@@ -25,4 +25,9 @@ public class BoardServiceImpl implements BoardService {
    public List<Board> list() throws Exception{
 	   return repository.findAll(Sort.by(Direction.DESC,"boardNo"));
    }
+   
+   @Override
+   public Board read(Long boardNo) throws Exception{
+	   return repository.getOne(boardNo);
+   }
 }
